@@ -1,0 +1,81 @@
+<div class="courses-container">
+  <h2>All Courses</h2>
+  <p>Browse and enroll in a variety of courses to boost your skills and knowledge.</p>
+
+  <!-- Filter Section -->
+  <div class="courses-filter-section">
+    <label>
+      Category:
+      <select [(ngModel)]="filter.category">
+        <option value="">All</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+    </label>
+    <label>
+      Level:
+      <select [(ngModel)]="filter.level">
+        <option value="">All</option>
+        <option *ngFor="let lvl of levels" [value]="lvl">{{ lvl }}</option>
+      </select>
+    </label>
+    <label>
+      Price:
+      <select [(ngModel)]="filter.price">
+        <option value="">All</option>
+        <option value="free">Free</option>
+        <option value="paid">Paid</option>
+      </select>
+    </label>
+    <button class="btn btn-blue" (click)="clearFilter()">Clear</button>
+  </div>
+
+  <div *ngIf="loading" class="course-detail-loading">Loading courses...</div>
+  <div *ngIf="errorMessage && !loading" class="course-detail-loading" style="color: #dc2626">
+    {{ errorMessage }}
+  </div>
+  <div class="courses-grid" *ngIf="!loading && !errorMessage">
+    <div class="course-card" *ngFor="let course of filteredCourses()">
+      <img class="course-image" [src]="course.image" [alt]="course.title + ' image'" />
+      <div class="course-card-content">
+        <div class="course-card-header">
+          <h3 class="course-title">{{ course.title }}</h3>
+          <span class="course-category">{{ course.category }}</span>
+        </div>
+        <div class="course-description">{{ course.description }}</div>
+        <div class="course-meta">
+          <span
+            >Level: <b>{{ course.level }}</b></span
+          >
+          <span
+            >Instructor: <b>{{ course.instructor }}</b></span
+          >
+          <span
+            >Lectures: <b>{{ course.lectures }}</b></span
+          >
+          <span
+            >Students: <b>{{ course.students }}</b></span
+          >
+        </div>
+      </div>
+      <div class="course-card-footer">
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+          "
+        >
+          <span class="course-price" [ngClass]="{ free: course.price === 0 }">
+            {{ course.price === 0 ? 'Free' : '$' + course.price }}
+          </span>
+          <div class="course-actions">
+            <button class="btn btn-outline" (click)="viewDetails(course)">View Details</button>
+            <button class="btn btn-primary" (click)="enroll(course)">Enroll</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

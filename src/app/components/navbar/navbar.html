@@ -1,0 +1,28 @@
+<!-- src/app/components/navbar/navbar.html -->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <a routerLink="/dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        CourseHub
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a></li>
+      <li><a routerLink="/courses" routerLinkActive="active-link">Courses</a></li>
+      <li><a routerLink="/instructors" routerLinkActive="active-link">Instructors</a></li>
+
+      <!-- الروابط حسب حالة تسجيل الدخول -->
+      <ng-container *ngIf="!authService.isAuthenticated()">
+        <li><a routerLink="/auth" routerLinkActive="active-link">Login</a></li>
+        <li><a routerLink="/auth" routerLinkActive="active-link">Register</a></li>
+      </ng-container>
+
+      <ng-container *ngIf="authService.isAuthenticated()">
+        <!-- هنا تقدر تستخدم getUserId() من AuthService لو عايز تربط ال profile بالـ id -->
+        <li><a routerLink="/profile" routerLinkActive="active-link">Profile</a></li>
+        <li><a (click)="onLogout()" class="logout-link">Logout</a></li>
+      </ng-container>
+    </ul>
+  </div>
+</nav>

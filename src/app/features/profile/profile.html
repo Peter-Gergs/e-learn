@@ -1,0 +1,63 @@
+<div class="profile-container">
+  <h2>Profile & Dashboard</h2>
+  <p>
+    View and edit your personal information, track your course progress, achievements, and upcoming
+    deadlines—all in one place.
+  </p>
+  <div class="profile-card">
+    <div class="profile-avatar">
+      <span style="color: #fff; font-size: 2rem; font-weight: bold">
+        {{ user?.firstName?.[0] }}{{ user?.lastName?.[0] }}
+      </span>
+    </div>
+    <div class="profile-info">
+      <h4>{{ user?.firstName }} {{ user?.lastName }}</h4>
+      <p><b>Role:</b> {{ user?.role | titlecase }}</p>
+      <p><b>Email:</b> {{ user?.email }}</p>
+      <p *ngIf="user?.bio"><b>Bio:</b> {{ user?.bio }}</p>
+      <button class="btn btn-blue" *ngIf="!showEdit" (click)="startEdit()">Edit Profile</button>
+      <button class="btn btn-blue" *ngIf="showEdit" (click)="cancelEdit()">Cancel</button>
+      <div *ngIf="showEdit && editUser" class="profile-edit-form" style="margin-top: 1.2rem">
+        <h3>Edit Profile</h3>
+        <form (ngSubmit)="saveEdit()">
+          <label>
+            First Name:
+            <input type="text" [(ngModel)]="editUser.firstName" name="firstName" required /> </label
+          ><br />
+          <label>
+            Last Name:
+            <input type="text" [(ngModel)]="editUser.lastName" name="lastName" required /> </label
+          ><br />
+          <label>
+            Bio:
+            <textarea [(ngModel)]="editUser.bio" name="bio" maxlength="500"></textarea></label
+          ><br />
+          <button class="btn btn-blue" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard Summary -->
+  <div class="dashboard-content">
+    <div class="dashboard-card">
+      <h4>Enrolled Courses</h4>
+      <p>{{ user?.courses?.length }} courses</p>
+    </div>
+    <div class="dashboard-card">
+      <h4>Achievements</h4>
+      <p>2 certificates</p>
+    </div>
+    <div class="dashboard-card">
+      <h4>Upcoming Deadlines</h4>
+      <p>1 assignment due soon</p>
+    </div>
+  </div>
+
+  <div *ngIf="user?.courses?.length" class="profile-courses">
+    <h3>Enrolled Courses</h3>
+    <ul>
+      <li *ngFor="let course of user?.courses">{{ course.title }}</li>
+    </ul>
+  </div>
+</div>

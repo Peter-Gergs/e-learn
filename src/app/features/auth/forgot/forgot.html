@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card">
+    <h2>Forgot Password</h2>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" name="email" />
+    </div>
+
+    <button (click)="onRequestOtp()" class="btn btn-blue">
+      Request OTP
+    </button>
+
+    <div class="form-group">
+      <label>Enter OTP</label>
+      <input type="text" [(ngModel)]="otp" name="otp" />
+    </div>
+
+    <button (click)="onVerifyOtp()" class="btn btn-green">
+      Verify OTP
+    </button>
+  </div>
+</div>

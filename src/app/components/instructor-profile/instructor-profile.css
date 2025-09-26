@@ -1,0 +1,95 @@
+/* Wrapper & Header */
+.profile-wrapper {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fefefe;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #007bff;
+}
+
+.profile-info h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.bio {
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+.email {
+  color: #007bff;
+  font-weight: 500;
+}
+
+/* Stats */
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  background: #f8f9fa;
+  padding: 1rem 0;
+  border-radius: 10px;
+}
+
+.stat h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.stat p {
+  margin: 0;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Courses */
+.courses-section h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.course-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.course-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 2rem;
+}

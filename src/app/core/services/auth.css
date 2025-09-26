@@ -1,0 +1,226 @@
+/* Container: centers and arranges elements */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  font-family: Arial, sans-serif;
+}
+
+.photo-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.photo-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 64px 24px 24px 24px; /* add top padding for spacing */
+  position: relative;
+}
+
+/* Switch button - smaller and seamless */
+.switch-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: auto;
+  min-height: 36px;
+  margin-bottom: 1.2rem;
+  margin-top: 0;
+  position: static;
+  background: #f3f4f6;
+  border-radius: 12px;
+  box-shadow: none;
+  padding: 0.25rem 0.5rem;
+  z-index: 1;
+  border: 1px solid #e5e7eb;
+}
+
+.switch-btn {
+  flex: 1;
+  padding: 6px 18px;
+  border: none;
+  background: none;
+  font-size: 0.98rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #6366f1;
+  border-radius: 8px;
+  transition: background 0.18s, color 0.18s;
+  outline: none;
+}
+
+.switch-btn.active {
+  background-color: #6366f1;
+  color: #fff;
+  box-shadow: 0 1px 4px rgba(99, 102, 241, 0.08);
+}
+
+.switch-btn:focus {
+  background: #6366f1;
+  color: #fff;
+}
+
+.form-section {
+  padding-top: 48px;
+}
+
+/* Card style - unified width, dynamic height */
+.card {
+  background-color: #ffffff;
+  padding: 24px;
+  width: 28rem;
+  min-width: 320px;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+  justify-content: flex-start;
+  transition: min-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
+}
+
+.card.login-card {
+  min-height: 340px;
+  height: auto;
+}
+
+.card.register-card {
+  min-height: 480px;
+  height: auto;
+}
+
+/* Responsive: shrink on mobile */
+@media (max-width: 600px) {
+  .card {
+    width: 98vw;
+    min-width: unset;
+    padding: 12px;
+  }
+}
+
+/* Form group */
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  margin-top: 4px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+/* Form Grid for First/Last Name */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.btn-blue {
+  background-color: #2563eb;
+}
+
+.btn-blue:hover {
+  background-color: #1e40af;
+}
+
+.btn-green {
+  background-color: #16a34a;
+}
+
+.btn-green:hover {
+  background-color: #15803d;
+}
+
+/* Links */
+.link-btn {
+  color: #2563eb;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.link-btn:hover {
+  text-decoration: none;
+}
+
+/* Forgot password link */
+.forgot-link-btn {
+  color: #2563eb;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.95rem;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.forgot-link-btn:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* Form footer: flex for buttons + links */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Center text paragraph */
+.text-center {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.error-message {
+  color: #ef4444; /* red-500 */
+  text-align: center;
+  font-size: 0.875rem;
+}

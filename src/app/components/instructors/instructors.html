@@ -1,0 +1,47 @@
+<!-- <div class="instructors-container">
+  <h2 class="page-title">Our Instructors</h2>
+
+  <div class="instructors-grid">
+    <div class="instructor-card" *ngFor="let instructor of instructors">
+      <img [src]="instructor.image" [alt]="instructor.name" class="instructor-img" />
+      <h3>{{ instructor.name }}</h3>
+      <p>{{ instructor.title }}</p>
+
+      View Profile -->
+      <!-- <a [routerLink]="['/instructors', instructor.id]" class="details-btn">View Profile</a>
+
+      
+      <div class="actions">
+        <button class="btn edit" (click)="editInstructor(instructor)">✏️ Edit</button>
+        <button class="btn delete" (click)="deleteInstructor(instructor.id)">🗑️ Delete</button>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="add-wrap">
+    <button class="btn add" (click)="addInstructor()">+ Add Instructor</button>
+  </div>
+</div> -->
+<div class="instructors-container" *ngIf="!loading && !error">
+  <div *ngFor="let instructor of instructors" class="instructor-card">
+    <img src="https://via.placeholder.com/150" alt="{{ instructor.name }}" class="instructor-img" />
+
+    <h2>{{ instructor.name }}</h2>
+    <p class="bio">{{ instructor.bio }}</p>
+    <p class="email">📧 {{ instructor.email }}</p>
+    <p class="courses-count">📚 Courses: {{ instructor.courses?.length || 0 }}</p>
+
+    <div class="actions">
+      <button [routerLink]="['/instructors', instructor._id]" class="btn view">👁 View</button>
+      <button [routerLink]="['/instructors/edit', instructor._id]" class="btn edit">✏ Edit</button>
+      <button (click)="deleteInstructor(instructor._id)" class="btn delete">🗑 Delete</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loading" class="loading">Loading instructors...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+
+

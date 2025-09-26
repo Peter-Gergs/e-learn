@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="photo-section">
+    <img src="/Rectangle 77.png" alt="Authentication Page Image" />
+  </div>
+
+  <div class="form-section">
+    <div class="switch-button-container">
+      <button class="switch-btn" [class.active]="isLoginMode" (click)="onSwitchMode(true)">
+        Login
+      </button>
+      <button class="switch-btn" [class.active]="!isLoginMode" (click)="onSwitchMode(false)">
+        Register
+      </button>
+    </div>
+    <div class="form-forms-wrapper">
+      <form *ngIf="isLoginMode" (ngSubmit)="onSubmit()" class="card login-card">
+        <h2>Login</h2>
+        <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" [(ngModel)]="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" [(ngModel)]="password" name="password" required />
+        </div>
+        <button type="submit" class="btn btn-blue">Login</button>
+        <div style="text-align: center; margin-top: 0.5rem">
+          <a href="#" class="forgot-link-btn" (click)="onForgotClick($event)">Forgot password?</a>
+        </div>
+      </form>
+      <form *ngIf="!isLoginMode" (ngSubmit)="onSubmit()" class="card register-card">
+        <h2>Register</h2>
+        <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+        <div class="form-group">
+          <label>Role</label>
+          <select [(ngModel)]="role" name="role">
+            <option value="student">Student</option>
+            <option value="instructor">Instructor</option>
+          </select>
+        </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>First Name</label>
+            <input [(ngModel)]="firstName" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input [(ngModel)]="lastName" name="lastName" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" [(ngModel)]="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" [(ngModel)]="password" name="password" required />
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required />
+        </div>
+        <button type="submit" class="btn btn-blue">Register</button>
+      </form>
+    </div>
+  </div>
+</div>

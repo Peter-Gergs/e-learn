@@ -1,0 +1,57 @@
+<!-- <div *ngIf="instructor" class="instructor-detail">
+  <div class="header">
+    <img [src]="instructor.image" alt="{{ instructor.name }}">
+    <div>
+      <h2>{{ instructor.name }}</h2>
+      <p>{{ instructor.title }}</p>
+      <p>Rating: {{ instructor.rating }} ⭐</p>
+    </div>
+  </div>
+
+  <div class="bio">
+    <h3>About</h3>
+    <p>{{ instructor.bio }}</p>
+  </div>
+
+  <div class="courses">
+    <h3>Courses</h3>
+    <ul>
+      <li *ngFor="let course of instructor.courses">{{ course }}</li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="!instructor">
+  <p>Instructor not found.</p>
+</div> -->
+<div *ngIf="!loading && instructor" class="instructor-detail card shadow-lg p-4">
+  <div class="d-flex align-items-center">
+    <img src="https://via.placeholder.com/150" alt="{{ instructor.name }}" class="instructor-img rounded-circle me-4">
+    <div>
+      <h2>{{ instructor.name }}</h2>
+      <h5 class="text-muted">{{ instructor.email }}</h5>
+    </div>
+  </div>
+
+  <hr>
+
+  <p class="bio">{{ instructor.bio }}</p>
+
+  <div *ngIf="instructor.courses?.length" class="courses">
+    <h4>📚 Courses Taught</h4>
+    <ul>
+      <li *ngFor="let course of instructor.courses">
+        {{ course.title }} - {{ course.level }} (💲{{ course.price }})
+      </li>
+    </ul>
+  </div>
+
+  <div class="actions">
+    <button class="btn" (click)="backToInstructors()">⬅ Back to Instructors</button>
+  </div>
+</div>
+
+<div *ngIf="loading" class="loading">Loading instructor...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+

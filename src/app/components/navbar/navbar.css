@@ -1,0 +1,73 @@
+/* Navbar main container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 0.8rem 2rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Inner container for spacing */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styling */
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* Navbar links */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #374151; /* default gray color */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding-bottom: 4px;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+/* Active link */
+.nav-links a.active-link {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+/* Optional logout link style */
+.logout-link {
+  cursor: pointer;
+  color: #e74c3c;
+  transition: all 0.2s;
+}
+
+.logout-link:hover {
+  color: #c0392b;
+}

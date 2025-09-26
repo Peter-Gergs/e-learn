@@ -1,0 +1,121 @@
+.course-details {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.course-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+}
+
+.course-details h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.desc {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin: 1rem 0;
+}
+
+.detail-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn.enroll {
+  background: linear-gradient(90deg, #28a745, #3ecf7f);
+}
+
+.btn.enroll:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn.back {
+  background: linear-gradient(90deg, #007bff, #00b4d8);
+}
+
+.btn.back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.details-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.course-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.btn.enroll {
+  background: linear-gradient(90deg, #28a745, #5cd65c);
+  color: #fff;
+}
+
+.btn.back {
+  background: linear-gradient(90deg, #0056b3, #0096c7);
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,98 @@
+<!-- <div *ngIf="course; else notFound" class="edit-container">
+  <h2>Edit Course</h2>
+
+  <div class="course-preview">
+    <img [src]="course.image" [alt]="course.title" class="course-image"/>
+    <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+    <p><strong>Students:</strong> {{ course.students }}</p>
+    <p><strong>Rating:</strong> {{ course.rating || 'No rating yet' }}</p>
+  </div>
+
+  <div class="form-group">
+    <label>Title:</label>
+    <input type="text" [(ngModel)]="course.title" />
+  </div>
+
+  <div class="form-group">
+    <label>Instructor:</label>
+    <input type="text" [(ngModel)]="course.instructor" />
+  </div>
+
+  <div class="form-group">
+    <label>Duration:</label>
+    <input type="text" [(ngModel)]="course.duration" />
+  </div>
+
+  <div class="form-group">
+    <label>Description:</label>
+    <textarea [(ngModel)]="course.description"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Price ($):</label>
+    <input type="number" [(ngModel)]="course.price" />
+  </div>
+
+  <div class="form-group">
+    <label>Image URL:</label>
+    <input type="text" [(ngModel)]="course.image" />
+  </div>
+
+  <div class="form-group">
+    <label>Rating:</label>
+    <input type="text" [(ngModel)]="course.rating" placeholder="e.g. 4.5/5"/>
+  </div>
+
+  <div class="actions">
+    <button (click)="save()" class="btn save">Save</button>
+    <a routerLink="/courses" class="btn cancel">Cancel</a>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <p>Course not found.</p>
+  <a routerLink="/courses">Back to Courses</a>
+</ng-template> -->
+<div *ngIf="loading">Loading course...</div>
+
+<div *ngIf="error">{{ error }}</div>
+
+<div *ngIf="course && !loading" class="course-edit-container">
+  <h2>Edit Course: {{ course.title }}</h2>
+
+  <div class="form-group">
+    <label>Title:</label>
+    <input type="text" [(ngModel)]="course.title" />
+  </div>
+
+  <div class="form-group">
+    <label>Description:</label>
+    <textarea [(ngModel)]="course.description"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Category:</label>
+    <input type="text" [(ngModel)]="course.category" />
+  </div>
+
+  <div class="form-group">
+    <label>Level:</label>
+    <select [(ngModel)]="course.level">
+      <option value="Beginner">Beginner</option>
+      <option value="Intermediate">Intermediate</option>
+      <option value="Advanced">Advanced</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Price:</label>
+    <input type="number" [(ngModel)]="course.price" />
+  </div>
+
+  <div class="form-group">
+    <label>Instructor ID:</label>
+    <input type="text" [(ngModel)]="course.instructor" />
+  </div>
+
+  <button class="btn save" (click)="save()">Save Changes</button>
+</div>

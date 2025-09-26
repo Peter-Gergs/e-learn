@@ -1,0 +1,36 @@
+<footer class="app-footer">
+  <div class="footer-content">
+    <div class="footer-main-row">
+      <div class="footer-col">
+        <div class="footer-brand">CourseHub</div>
+        <div class="footer-address">
+          <span>123 Learning Ave, Knowledge City, 12345</span><br />
+          <span>Email: support@coursehub.com</span><br />
+          <span>Phone: +1 (555) 123-4567</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-links">
+          <a routerLink="/" class="footer-link">Home</a>
+          <a routerLink="/courses" class="footer-link">Courses</a>
+          <a routerLink="/profile" class="footer-link">Profile</a>
+          <a routerLink="/contact" class="footer-link">Contact Us</a>
+        </div>
+
+        <form class="footer-newsletter" (submit)="$event.preventDefault(); subscribeNewsletter(newsletterEmail.value)">
+          <label for="newsletter-email">Subscribe to our newsletter</label>
+          <div class="newsletter-row">
+            <input #newsletterEmail type="email" placeholder="Your email" required />
+            <button type="submit" class="btn btn-blue">Subscribe</button>
+          </div>
+          <div *ngIf="newsletterSuccess" class="newsletter-success">
+            Thank you for subscribing!
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-copy">&copy; {{ year }} CourseHub. All rights reserved.</div>
+  </div>
+</footer>

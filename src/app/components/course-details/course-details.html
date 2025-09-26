@@ -1,0 +1,36 @@
+<!-- <div *ngIf="course; else notFound" class="course-details">
+  <img [src]="course.image" [alt]="course.title" class="course-image" />
+  <h1>{{ course.title }}</h1>
+  <p class="desc">{{ course.description }}</p>
+  <p><strong>Duration:</strong> {{ course.duration }}</p>
+  <p><strong>Students:</strong> {{ course.students }}</p>
+  <p class="price">Price: ${{ course.price }}</p>
+
+  <div class="detail-actions">
+    <button class="btn enroll">Enroll Now</button>
+    <a routerLink="/courses" class="btn back">← Back to Courses</a>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <p>Course not found.</p>
+  <a routerLink="/courses">Back to list</a>
+</ng-template> -->
+<div *ngIf="course; else notFound" class="course-details card shadow-lg p-4">
+  <h2>{{ course.title }}</h2>
+  <p>{{ course.description }}</p>
+  <p><strong>Category:</strong> {{ course.category }}</p>
+  <p><strong>Level:</strong> {{ course.level }}</p>
+  <p><strong>Price:</strong> ${{ course.price }}</p>
+  <p><strong>Instructor ID:</strong> {{ course.instructor }}</p>
+  <p><strong>Enrolled Students:</strong> {{ course.students?.length || 0 }}</p>
+
+  <!-- زرار تسجيل -->
+  <button class="btn enroll" (click)="enroll('student1')">Enroll</button>
+  <button class="btn back" (click)="backToCourses()">⬅ Back to Courses</button>
+</div>
+
+<ng-template #notFound>
+  <p>Course not found.</p>
+  <a routerLink="/courses">Back to Courses</a>
+</ng-template>

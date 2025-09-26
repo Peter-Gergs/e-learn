@@ -1,0 +1,62 @@
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card h2 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.category {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #27ae60;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn.view { background: #3498db; color: #fff; }
+.btn.edit { background: #f39c12; color: #fff; }
+.btn.delete { background: #e74c3c; color: #fff; }
+
+.btn:hover { opacity: 0.85; }
